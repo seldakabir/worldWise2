@@ -8,6 +8,7 @@ import AppLayout from "./pages/AppLayout.jsx";
 import CityList from "./Components/CityList.jsx";
 import { useState, useEffect } from "react";
 import CountryList from "./Components/CountryList.jsx";
+import City from "./Components/City.jsx";
 // const Address="http://localhost:8000"
 export default function App() {
   const [cities, setCities] = useState([]);
@@ -42,6 +43,7 @@ export default function App() {
               path="cities"
               element={<CityList cities={cities} isLoading={isLoading} />}
             />
+            <Route path="cities/:id" element={<City />} />
             <Route path="countries" element={<CountryList cities={cities} />} />
             <Route path="form" element={<form>form</form>} />
           </Route>
