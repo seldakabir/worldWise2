@@ -7,7 +7,7 @@ import Homepage from "./Pages/HomePage.jsx";
 import AppLayout from "./pages/AppLayout.jsx"
 import CityList from "./Components/CityList.jsx"
 import { useState, useEffect } from "react";
-const Address="http://localhost:8000"
+// const Address="http://localhost:8000"
 export default function App() {
   const [cities, setCities] = useState([])
   const [isLoading,setIsLoading]=useState(false)
@@ -16,10 +16,10 @@ export default function App() {
     async function fetchCity() {
       try {
              setIsLoading(true)
-      const res = await fetch(`${Address}/cities`)
+      const res = await fetch("http://localhost:8000/cities")
          const data = await res.json()
         setCities(data)
-       console.log(data);
+      //  console.log(data);
     }
    catch(err) {
      console.error('there is an error',err);
