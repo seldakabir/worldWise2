@@ -1,10 +1,12 @@
-import React from "react";
 import styles from "./CountryItem.module.css";
-export default function CountryItem({ country }) {
+
+function CountryItem({ country }) {
   return (
-    <ul className={styles.countryItem}>
-      <span>{country.country}</span>
+    <li className={styles.countryItem}>
       <span>{country.emoji}</span>
-    </ul>
+      <span>{country.country}</span>
+    </li>
   );
 }
+
+export default CountryItem;
