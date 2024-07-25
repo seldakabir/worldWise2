@@ -1,6 +1,20 @@
+import CountryItem from "./CountryItem";
+import styles from "./CountryList.module.css";
+export default function CountryList({ cities }) {
+  const countries = cities.reduce(
+    (arr, city) => {
+      if (arr.map((el) => el.city).includes(city.country)) return arr;
+      else return [...arr, { country: city.country, emoji: city.imoji }];
+    },
 
-export default function CountryList() {
+    []
+  );
+  console.log(countries);
   return (
-    <div>CountryList</div>
-  )
+    <ul className={styles.CountryList}>
+      {countries.map((Country) => (
+        <CountryItem country={Country} />
+      ))}
+    </ul>
+  );
 }
