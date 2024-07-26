@@ -5,6 +5,8 @@
 // import styles from "./City.module.css";
 // import Spinner from "./Spinner";
 
+import { useSearchParams } from "react-router-dom";
+
 // const formatDate = (date) =>
 //   new Intl.DateTimeFormat("en", {
 //     day: "numeric",
@@ -14,6 +16,9 @@
 //   }).format(new Date(date));
 
 function City() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
   // const { id } = useParams();
   // const { getCity, currentCity, isLoading } = useCities();
 
